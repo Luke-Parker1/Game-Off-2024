@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://bvi02x83qisol"]
+
+[ext_resource type="Texture2D" uid="uid://bi6khkc6ju7dq" path="res://icon.svg" id="1_ii5jd"]
+[ext_resource type="Script" path="res://person.gd" id="1_vvcit"]
+[ext_resource type="Script" path="res://state_machine.gd" id="3_2jb1u"]
+[ext_resource type="Script" path="res://person_idle.gd" id="4_0o5e0"]
+[ext_resource type="Script" path="res://person_follow.gd" id="5_oa13w"]
+[ext_resource type="Script" path="res://person_talk.gd" id="6_5cj3n"]
+[ext_resource type="Script" path="res://person_listen.gd" id="7_s7bhm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tc52t"]
+size = Vector2(32, 32)
+
+[node name="Person" type="CharacterBody2D" groups=["Person"]]
+script = ExtResource("1_vvcit")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_ii5jd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tc52t")
+
+[node name="State Machine" type="Node2D" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_2jb1u")
+initial_state = NodePath("Follow")
+
+[node name="Idle" type="Node2D" parent="State Machine" node_paths=PackedStringArray("person")]
+script = ExtResource("4_0o5e0")
+person = NodePath("../..")
+
+[node name="Follow" type="Node2D" parent="State Machine" node_paths=PackedStringArray("person")]
+script = ExtResource("5_oa13w")
+person = NodePath("../..")
+
+[node name="Talk" type="Node2D" parent="State Machine" node_paths=PackedStringArray("person")]
+script = ExtResource("6_5cj3n")
+person = NodePath("../..")
+
+[node name="Listen" type="Node2D" parent="State Machine" node_paths=PackedStringArray("person")]
+script = ExtResource("7_s7bhm")
+person = NodePath("../..")
+
+[node name="TalkArea" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TalkArea"]
+polygon = PackedVector2Array(0, -17, -82, -117, 82, -117)
+disabled = true
