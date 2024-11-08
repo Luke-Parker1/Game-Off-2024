@@ -14,7 +14,7 @@ func Enter():
 		if target:
 			talk_area.rotation = global_position.direction_to(target.position).angle() + 90
 		talk_area.get_child(0).disabled = false
-	talk_time = randf_range(5, 15)
+	talk_time = randf_range(5, 10)
 
 func State_Update(delta: float):
 	if person:
@@ -28,5 +28,11 @@ func State_Update(delta: float):
 		Transitioned.emit(self, "Idle")
 
 func Exit():
+	if person:
+		if !person.listeners.is_empty() and person.aware:
+			for i in person.listeners:
+				if !i.aware:
+					i.aware = true
+		
 	if talk_area:
 		talk_area.get_child(0).disabled = true

@@ -12,6 +12,7 @@
 size = Vector2(32, 32)
 
 [node name="Person" type="CharacterBody2D" groups=["Person"]]
+collision_mask = 0
 script = ExtResource("1_vvcit")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -23,7 +24,7 @@ shape = SubResource("RectangleShape2D_tc52t")
 
 [node name="State Machine" type="Node2D" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_2jb1u")
-initial_state = NodePath("Follow")
+initial_state = NodePath("Idle")
 
 [node name="Idle" type="Node2D" parent="State Machine" node_paths=PackedStringArray("person")]
 script = ExtResource("4_0o5e0")

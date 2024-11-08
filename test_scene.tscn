@@ -11,24 +11,3 @@ position = Vector2(213, 451)
 
 [node name="Person2" parent="." instance=ExtResource("1_ngwih")]
 position = Vector2(192, 187)
-
-[node name="Person3" parent="." instance=ExtResource("1_ngwih")]
-position = Vector2(781, 184)
-
-[node name="Person4" parent="." instance=ExtResource("1_ngwih")]
-position = Vector2(670, 272)
-
-[node name="Person5" parent="." instance=ExtResource("1_ngwih")]
-position = Vector2(513, 529)
-
-[node name="Person6" parent="." instance=ExtResource("1_ngwih")]
-position = Vector2(1003, 540)
-
-[node name="Person7" parent="." instance=ExtResource("1_ngwih")]
-position = Vector2(1022, 276)
-
-[node name="Person8" parent="." instance=ExtResource("1_ngwih")]
-position = Vector2(491, 177)
-
-[node name="Person9" parent="." instance=ExtResource("1_ngwih")]
-position = Vector2(81, 570)
