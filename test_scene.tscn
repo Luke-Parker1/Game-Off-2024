@@ -1,13 +1,49 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3dmj4alays6t"]
+[gd_scene load_steps=6 format=3 uid="uid://c3dmj4alays6t"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_hf6ty"]
 [ext_resource type="PackedScene" uid="uid://bvi02x83qisol" path="res://person.tscn" id="1_ngwih"]
+[ext_resource type="PackedScene" uid="uid://cynv2uh7uk00b" path="res://player.tscn" id="3_klmid"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_17dmu"]
+size = Vector2(47, 744)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0oe3n"]
+size = Vector2(1362.5, 32)
 
 [node name="Test_Scene" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_hf6ty")
 
 [node name="Person" parent="." instance=ExtResource("1_ngwih")]
 position = Vector2(213, 451)
 
 [node name="Person2" parent="." instance=ExtResource("1_ngwih")]
-position = Vector2(192, 187)
+position = Vector2(982, 240)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-23, 362)
+shape = SubResource("RectangleShape2D_17dmu")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1301, 362)
+shape = SubResource("RectangleShape2D_17dmu")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(638, -18)
+shape = SubResource("RectangleShape2D_0oe3n")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(638, 735)
+shape = SubResource("RectangleShape2D_0oe3n")
+
+[node name="Player" parent="." instance=ExtResource("3_klmid")]
+position = Vector2(547, 264)
+
+[node name="Person3" parent="." instance=ExtResource("1_ngwih")]
+position = Vector2(905, 510)
+
+[node name="Person4" parent="." instance=ExtResource("1_ngwih")]
+position = Vector2(208, 246)

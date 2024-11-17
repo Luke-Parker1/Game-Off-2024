@@ -8,7 +8,7 @@ var talk_area : Area2D
 
 func Enter():
 	if person:
-		talk_area = person.get_child(3)
+		talk_area = person.find_child("TalkArea")
 		target = person.target
 		person.velocity = Vector2(0, 0)
 		if target:

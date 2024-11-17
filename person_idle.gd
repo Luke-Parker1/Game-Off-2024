@@ -17,10 +17,11 @@ func randomize_wander():
 
 func Enter():
 	randomize_wander()
+	
 
 func State_Update(delta: float):
 	if person:
-		if !person.talkers.is_empty() and !person.aware:
+		if !person.talkers.is_empty():
 			Transitioned.emit(self, "Listen")
 	if wander_time > 0:
 		wander_time -= delta

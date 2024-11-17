@@ -22,6 +22,13 @@ func _process(delta: float):
 	else:
 		volume = not_aware_volume
 		self.modulate = og_color
+		
+	if velocity != Vector2(0,0):
+		$AnimatedSprite2D.play("walk")
+	elif !$TalkArea/CollisionPolygon2D.disabled:
+		$AnimatedSprite2D.play("talk")
+	else:
+		$AnimatedSprite2D.play("listen")
 
 func _physics_process(delta: float):
 	if $TalkArea/CollisionPolygon2D.disabled:

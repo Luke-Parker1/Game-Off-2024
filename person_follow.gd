@@ -32,7 +32,7 @@ func Enter():
 
 func State_Update(delta: float):
 	if person:
-		if !person.talkers.is_empty() and !person.aware:
+		if !person.talkers.is_empty():
 			Transitioned.emit(self, "Listen")
 
 func State_Physics_Update(delta: float):
@@ -44,7 +44,7 @@ func State_Physics_Update(delta: float):
 		var direction = target.global_position - person.global_position
 		person.velocity = direction.normalized() * move_speed
 		
-		if direction.length() < 100:
+		if direction.length() < 130:
 			Transitioned.emit(self, "Talk")
 
 func sort_distance(a : CharacterBody2D, b : CharacterBody2D):
