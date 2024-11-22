@@ -13,22 +13,35 @@ var aware := false
 var aware_volume : int
 
 var volume : int
-var og_color = self.modulate
+
+# True if this person is not supposed to find out the secret
+var cannot_know := false
 
 func _process(delta: float):
 	if aware:
-		self.modulate = Color("Green")
+		$AwareBubble.visible = true
 		volume = aware_volume
+		if cannot_know:
+			print("He found out!")
 	else:
+		$AwareBubble.visible = false
 		volume = not_aware_volume
-		self.modulate = og_color
 		
 	if velocity != Vector2(0,0):
-		$AnimatedSprite2D.play("walk")
+		if !cannot_know:
+			$AnimatedSprite2D.play("walk")
+		else:
+			$AnimatedSprite2D.play("can't_know_walk")
 	elif !$TalkArea/CollisionPolygon2D.disabled:
-		$AnimatedSprite2D.play("talk")
+		if !cannot_know:
+			$AnimatedSprite2D.play("talk")
+		else:
+			$AnimatedSprite2D.play("can't_know_talk")
 	else:
-		$AnimatedSprite2D.play("listen")
+		if !cannot_know:
+			$AnimatedSprite2D.play("listen")
+		else:
+			$AnimatedSprite2D.play("can't_know_listen")
 
 func _physics_process(delta: float):
 	if $TalkArea/CollisionPolygon2D.disabled:

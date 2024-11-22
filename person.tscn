@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bvi02x83qisol"]
+[gd_scene load_steps=24 format=3 uid="uid://bvi02x83qisol"]
 
 [ext_resource type="Script" path="res://person.gd" id="1_vvcit"]
 [ext_resource type="Script" path="res://state_machine.gd" id="3_2jb1u"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://person_listen.gd" id="7_s7bhm"]
 [ext_resource type="Texture2D" uid="uid://061ic5vchdn4" path="res://game_off_person-Sheet.png" id="8_2ou00"]
 [ext_resource type="Texture2D" uid="uid://cqd8pvvofy7im" path="res://game_off_cannot_know-Sheet.png" id="8_ub0ge"]
+[ext_resource type="Texture2D" uid="uid://imri34ga2f1" path="res://game_off_bubble.png" id="9_osjbf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tc52t"]
 size = Vector2(40, 60)
@@ -168,3 +169,10 @@ texture_filter = 1
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_fpqe6")
 animation = &"walk"
+
+[node name="AwareBubble" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(56, -57)
+scale = Vector2(4, 4)
+texture = ExtResource("9_osjbf")

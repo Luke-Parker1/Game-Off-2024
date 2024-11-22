@@ -24,6 +24,10 @@ window/stretch/mode="viewport"
 
 Person=""
 
+[gui]
+
+theme/custom="res://theme.tres"
+
 [input]
 
 left={
