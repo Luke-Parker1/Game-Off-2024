@@ -13,7 +13,9 @@ func Enter():
 		person.velocity = Vector2(0, 0)
 		if target:
 			talk_area.rotation = global_position.direction_to(target.position).angle() + 90
-		talk_area.get_child(0).disabled = false
+		talk_area.find_child("CollisionPolygon2D").disabled = false
+		talk_area.find_child("AnimatedSprite2D").visible = true
+		talk_area.find_child("AnimatedSprite2D").play("default")
 	talk_time = randf_range(5, 10)
 
 func State_Update(delta: float):
@@ -29,6 +31,7 @@ func State_Update(delta: float):
 
 func Exit():
 	if person:
+		talk_area.find_child("AnimatedSprite2D").visible = false
 		if !person.listeners.is_empty() and person.aware:
 			for i in person.listeners:
 				if !i.aware:

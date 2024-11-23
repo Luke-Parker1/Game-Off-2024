@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bvi02x83qisol"]
+[gd_scene load_steps=30 format=3 uid="uid://bvi02x83qisol"]
 
 [ext_resource type="Script" path="res://person.gd" id="1_vvcit"]
 [ext_resource type="Script" path="res://state_machine.gd" id="3_2jb1u"]
@@ -6,12 +6,49 @@
 [ext_resource type="Script" path="res://person_follow.gd" id="5_oa13w"]
 [ext_resource type="Script" path="res://person_talk.gd" id="6_5cj3n"]
 [ext_resource type="Script" path="res://person_listen.gd" id="7_s7bhm"]
+[ext_resource type="Texture2D" uid="uid://ctju00xp2sgrf" path="res://game_off_soundwave-Sheet.png" id="7_tjxkh"]
 [ext_resource type="Texture2D" uid="uid://061ic5vchdn4" path="res://game_off_person-Sheet.png" id="8_2ou00"]
 [ext_resource type="Texture2D" uid="uid://cqd8pvvofy7im" path="res://game_off_cannot_know-Sheet.png" id="8_ub0ge"]
 [ext_resource type="Texture2D" uid="uid://imri34ga2f1" path="res://game_off_bubble.png" id="9_osjbf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tc52t"]
 size = Vector2(40, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikr1y"]
+atlas = ExtResource("7_tjxkh")
+region = Rect2(0, 0, 65, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exo7q"]
+atlas = ExtResource("7_tjxkh")
+region = Rect2(65, 0, 65, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odfk2"]
+atlas = ExtResource("7_tjxkh")
+region = Rect2(130, 0, 65, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q07kk"]
+atlas = ExtResource("7_tjxkh")
+region = Rect2(195, 0, 65, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gco3r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikr1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exo7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odfk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q07kk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lmert"]
 atlas = ExtResource("8_ub0ge")
@@ -163,6 +200,14 @@ person = NodePath("../..")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TalkArea"]
 polygon = PackedVector2Array(0, -17, -130, -151, 130, -151)
 disabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="TalkArea"]
+visible = false
+z_index = 100
+texture_filter = 1
+position = Vector2(0, -101)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_gco3r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

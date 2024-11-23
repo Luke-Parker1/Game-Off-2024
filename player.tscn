@@ -123,7 +123,7 @@ sprite_frames = SubResource("SpriteFrames_aqv0i")
 
 [node name="FlashAnimation" type="AnimatedSprite2D" parent="."]
 visible = false
-z_index = 100
+z_index = 200
 texture_filter = 1
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_pnjif")
