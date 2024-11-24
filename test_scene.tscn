@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c3dmj4alays6t"]
+[gd_scene load_steps=8 format=3 uid="uid://c3dmj4alays6t"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_hf6ty"]
 [ext_resource type="PackedScene" uid="uid://bvi02x83qisol" path="res://person.tscn" id="1_ngwih"]
 [ext_resource type="PackedScene" uid="uid://cynv2uh7uk00b" path="res://player.tscn" id="3_klmid"]
 [ext_resource type="PackedScene" uid="uid://dky5cooxib5cx" path="res://mind_erase_bar.tscn" id="4_n5waq"]
+[ext_resource type="PackedScene" uid="uid://3hlxqa7lsvtr" path="res://dash_bar.tscn" id="5_3t00n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_17dmu"]
 size = Vector2(47, 744)
@@ -53,4 +54,10 @@ position = Vector2(208, 246)
 offset_left = 27.0
 offset_top = 35.0
 offset_right = 341.0
+offset_bottom = 85.0
+
+[node name="DashBar" parent="." instance=ExtResource("5_3t00n")]
+offset_left = 819.0
+offset_top = 35.0
+offset_right = 1133.0
 offset_bottom = 85.0

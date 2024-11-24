@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dky5cooxib5cx"]
+[gd_scene load_steps=3 format=3 uid="uid://3hlxqa7lsvtr"]
 
-[ext_resource type="Script" path="res://progress_bar.gd" id="1_g7c2o"]
-[ext_resource type="FontFile" uid="uid://cd2btctqwtg0e" path="res://ModernDOS9x16.ttf" id="1_oxo6d"]
+[ext_resource type="Script" path="res://progress_bar.gd" id="1_3lddb"]
+[ext_resource type="FontFile" uid="uid://cd2btctqwtg0e" path="res://ModernDOS9x16.ttf" id="2_sesrp"]
 
-[node name="MindEraseBar" type="ProgressBar"]
+[node name="DashBar" type="ProgressBar"]
 offset_left = 33.0
 offset_top = 58.0
 offset_right = 347.0
@@ -11,7 +11,7 @@ offset_bottom = 108.0
 max_value = 3.0
 step = 0.2
 show_percentage = false
-script = ExtResource("1_g7c2o")
+script = ExtResource("1_3lddb")
 
 [node name="Label" type="Label" parent="."]
 visible = false
@@ -22,7 +22,7 @@ offset_bottom = 50.0
 theme_override_colors/font_color = Color(0.27451, 0.282353, 0.305882, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("1_oxo6d")
+theme_override_fonts/font = ExtResource("2_sesrp")
 theme_override_font_sizes/font_size = 32
 text = "Ready"
 horizontal_alignment = 1
@@ -37,8 +37,8 @@ offset_bottom = 12.0
 theme_override_colors/font_color = Color(0.27451, 0.282353, 0.305882, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("1_oxo6d")
+theme_override_fonts/font = ExtResource("2_sesrp")
 theme_override_font_sizes/font_size = 32
-text = "Mind-Erase-3000"
+text = "Dash"
 horizontal_alignment = 1
 vertical_alignment = 1

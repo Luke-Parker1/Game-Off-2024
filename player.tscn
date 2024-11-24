@@ -129,4 +129,15 @@ scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_pnjif")
 animation = &"flash"
 
+[node name="MindWipeCooldown" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="DashTimer" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="DashCooldown" type="Timer" parent="."]
+
 [connection signal="animation_finished" from="FlashAnimation" to="." method="_on_flash_animation_animation_finished"]
+[connection signal="timeout" from="MindWipeCooldown" to="." method="_on_mind_wipe_cooldown_timeout"]
+[connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]
