@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://3hlxqa7lsvtr"]
 
-[ext_resource type="Script" path="res://progress_bar.gd" id="1_3lddb"]
-[ext_resource type="FontFile" uid="uid://cd2btctqwtg0e" path="res://ModernDOS9x16.ttf" id="2_sesrp"]
+[ext_resource type="Script" path="res://Scripts/progress_bar.gd" id="1_3lddb"]
+[ext_resource type="FontFile" uid="uid://cd2btctqwtg0e" path="res://Art/ModernDOS9x16.ttf" id="2_sesrp"]
 
 [node name="DashBar" type="ProgressBar"]
 offset_left = 33.0

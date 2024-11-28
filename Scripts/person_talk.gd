@@ -16,7 +16,7 @@ func Enter():
 		talk_area.find_child("CollisionPolygon2D").disabled = false
 		talk_area.find_child("AnimatedSprite2D").visible = true
 		talk_area.find_child("AnimatedSprite2D").play("default")
-	talk_time = randf_range(5, 10)
+	talk_time = randf_range(0.5, 3)
 
 func State_Update(delta: float):
 	if person:
@@ -38,4 +38,4 @@ func Exit():
 					i.aware = true
 		
 	if talk_area:
-		talk_area.get_child(0).disabled = true
+		talk_area.find_child("CollisionPolygon2D").disabled = true

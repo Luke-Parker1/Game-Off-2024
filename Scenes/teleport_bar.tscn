@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://ycmufqbw2tfv"]
+
+[ext_resource type="Script" path="res://Scripts/progress_bar.gd" id="1_2s528"]
+[ext_resource type="FontFile" uid="uid://cd2btctqwtg0e" path="res://Art/ModernDOS9x16.ttf" id="2_2vl05"]
+
+[node name="TeleportBar" type="ProgressBar"]
+offset_left = 33.0
+offset_top = 58.0
+offset_right = 347.0
+offset_bottom = 108.0
+max_value = 3.0
+step = 0.2
+show_percentage = false
+script = ExtResource("1_2s528")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_right = 314.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.27451, 0.282353, 0.305882, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_2vl05")
+theme_override_font_sizes/font_size = 32
+text = "Ready"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_top = -38.0
+offset_right = 314.0
+offset_bottom = 12.0
+theme_override_colors/font_color = Color(0.27451, 0.282353, 0.305882, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_2vl05")
+theme_override_font_sizes/font_size = 32
+text = "Teleporter"
+horizontal_alignment = 1
+vertical_alignment = 1

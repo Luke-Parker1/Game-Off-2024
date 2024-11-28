@@ -50,7 +50,7 @@ func _physics_process(delta: float):
 		$TalkArea/CollisionPolygon2D.visible = true
 	if !$TalkArea.get_overlapping_bodies().is_empty():
 		for i in $TalkArea.get_overlapping_bodies():
-			if i not in listeners:
+			if i not in listeners && get_tree().get_nodes_in_group("Person").has(i):
 				listeners.append(i)
 				i.talkers.append(self)
 	

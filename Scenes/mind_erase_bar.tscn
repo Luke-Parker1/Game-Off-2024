@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dky5cooxib5cx"]
 
-[ext_resource type="Script" path="res://progress_bar.gd" id="1_g7c2o"]
-[ext_resource type="FontFile" uid="uid://cd2btctqwtg0e" path="res://ModernDOS9x16.ttf" id="1_oxo6d"]
+[ext_resource type="Script" path="res://Scripts/progress_bar.gd" id="1_g7c2o"]
+[ext_resource type="FontFile" uid="uid://cd2btctqwtg0e" path="res://Art/ModernDOS9x16.ttf" id="1_oxo6d"]
 
 [node name="MindEraseBar" type="ProgressBar"]
 offset_left = 33.0

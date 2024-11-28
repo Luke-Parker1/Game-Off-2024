@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://imri34ga2f1"
-path="res://.godot/imported/game_off_bubble.png-9b3e78d90a8521f71a55ee92d7902daf.ctex"
+uid="uid://061ic5vchdn4"
+path="res://.godot/imported/game_off_person-Sheet.png-b580e4bc4f22daffd5233ec013465c8e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game_off_bubble.png"
-dest_files=["res://.godot/imported/game_off_bubble.png-9b3e78d90a8521f71a55ee92d7902daf.ctex"]
+source_file="res://Art/game_off_person-Sheet.png"
+dest_files=["res://.godot/imported/game_off_person-Sheet.png-b580e4bc4f22daffd5233ec013465c8e.ctex"]
 
 [params]
 

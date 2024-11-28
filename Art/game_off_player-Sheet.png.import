@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqd8pvvofy7im"
-path="res://.godot/imported/game_off_cannot_know-Sheet.png-8347e22f6cc339cafe3f4f14e46d1308.ctex"
+uid="uid://b6hdlaaqd0wrl"
+path="res://.godot/imported/game_off_player-Sheet.png-8bf49f4b1400c66fa0b4ea0b7fe9de2e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game_off_cannot_know-Sheet.png"
-dest_files=["res://.godot/imported/game_off_cannot_know-Sheet.png-8347e22f6cc339cafe3f4f14e46d1308.ctex"]
+source_file="res://Art/game_off_player-Sheet.png"
+dest_files=["res://.godot/imported/game_off_player-Sheet.png-8bf49f4b1400c66fa0b4ea0b7fe9de2e.ctex"]
 
 [params]
 
