@@ -1,0 +1,101 @@
+[gd_scene load_steps=3 format=3 uid="uid://buv77pxmddijv"]
+
+[ext_resource type="Script" path="res://Scripts/options.gd" id="1_mv7xr"]
+[ext_resource type="FontFile" uid="uid://cd2btctqwtg0e" path="res://Art/ModernDOS9x16.ttf" id="1_pyu1b"]
+
+[node name="Options" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_mv7xr")
+
+[node name="Exit to Menu" type="Button" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 50.0
+offset_top = 277.0
+offset_right = 562.0
+offset_bottom = 444.0
+theme_override_colors/font_hover_pressed_color = Color(0.945098, 0.054902, 0.0862745, 1)
+theme_override_colors/font_hover_color = Color(0.945098, 0.054902, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0.945098, 0.054902, 0.0862745, 1)
+theme_override_colors/font_focus_color = Color(0.945098, 0.054902, 0.0862745, 1)
+theme_override_colors/font_color = Color(0.27451, 0.282353, 0.305882, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_pyu1b")
+theme_override_font_sizes/font_size = 64
+text = "Exit to Menu"
+
+[node name="Return to game" type="Button" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 718.0
+offset_top = 277.0
+offset_right = 1230.0
+offset_bottom = 444.0
+theme_override_colors/font_hover_pressed_color = Color(0.945098, 0.054902, 0.0862745, 1)
+theme_override_colors/font_hover_color = Color(0.945098, 0.054902, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0.945098, 0.054902, 0.0862745, 1)
+theme_override_colors/font_focus_color = Color(0.945098, 0.054902, 0.0862745, 1)
+theme_override_colors/font_color = Color(0.27451, 0.282353, 0.305882, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_pyu1b")
+theme_override_font_sizes/font_size = 64
+text = "Return to Game"
+
+[node name="Next Round" type="Button" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 718.0
+offset_top = 277.0
+offset_right = 1230.0
+offset_bottom = 444.0
+theme_override_colors/font_hover_pressed_color = Color(0.945098, 0.054902, 0.0862745, 1)
+theme_override_colors/font_hover_color = Color(0.945098, 0.054902, 0.0862745, 1)
+theme_override_colors/font_pressed_color = Color(0.945098, 0.054902, 0.0862745, 1)
+theme_override_colors/font_focus_color = Color(0.945098, 0.054902, 0.0862745, 1)
+theme_override_colors/font_color = Color(0.27451, 0.282353, 0.305882, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_pyu1b")
+theme_override_font_sizes/font_size = 64
+text = "Next Round"
+
+[node name="LoseLabel" type="Label" parent="Control"]
+visible = false
+texture_filter = 1
+offset_top = 148.0
+offset_right = 1280.0
+offset_bottom = 248.0
+theme_override_colors/font_color = Color(0.27451, 0.282353, 0.305882, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_pyu1b")
+theme_override_font_sizes/font_size = 100
+text = "He found out!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WinLabel" type="Label" parent="Control"]
+visible = false
+texture_filter = 1
+offset_top = 148.0
+offset_right = 1280.0
+offset_bottom = 248.0
+theme_override_colors/font_color = Color(0.27451, 0.282353, 0.305882, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_pyu1b")
+theme_override_font_sizes/font_size = 100
+text = "You erased the secret!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Control/Exit to Menu" to="Control" method="_on_exit_to_menu_pressed"]
+[connection signal="pressed" from="Control/Return to game" to="Control" method="_on_return_to_game_pressed"]
+[connection signal="pressed" from="Control/Next Round" to="Control" method="_on_next_round_pressed"]

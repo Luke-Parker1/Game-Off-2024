@@ -7,6 +7,9 @@ class_name PersonFollow
 var target : CharacterBody2D
 var person_group : Array
 
+# Array of people to be erased from person_group
+var erase_group : Array
+
 func Enter():
 	# Set the target equal to a random person that is not self
 	if person:
@@ -16,7 +19,9 @@ func Enter():
 		if person.aware:
 			for i in person_group:
 				if i.aware:
-					person_group.erase(i)
+					erase_group.append(i)
+			for i in erase_group:
+				person_group.erase(i)
 		
 		if !person_group.is_empty():
 			# Make it more likely to target person closer to self
@@ -28,14 +33,15 @@ func Enter():
 			
 			if target == null:
 				target = person_group.pick_random()
+				
 			person.target = target
 
-func State_Update(delta: float):
+func State_Update(_delta: float):
 	if person:
 		if !person.talkers.is_empty():
 			Transitioned.emit(self, "Listen")
 
-func State_Physics_Update(delta: float):
+func State_Physics_Update(_delta: float):
 	#Go to person
 	if person and target:
 		if person_group.is_empty():

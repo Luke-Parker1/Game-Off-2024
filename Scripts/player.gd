@@ -12,10 +12,13 @@ func _ready():
 	$MindWipeCooldown.start()
 	$DashCooldown.start()
 	$TeleportCooldown.start()
+	
+	self.position.x = randf_range(59, 1223)
+	self.position.y = randf_range(174, 638)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var direction = Input.get_vector("left", "right", "up", "down")
-	if Input.is_action_just_pressed("left_click") && $DashCooldown.is_stopped():
+	if Input.is_action_just_pressed("left_click") && $DashCooldown.is_stopped() && !dashing:
 		dash_direction = self.position.direction_to(get_global_mouse_position()).normalized()
 		dashing = true
 		$DashTimer.start()
@@ -46,7 +49,7 @@ func _physics_process(delta):
 	
 	move_and_slide()
 
-func _process(delta):
+func _process(_delta):
 	if velocity == Vector2(0,0):
 		$AnimatedSprite2D.play("default")
 	else:

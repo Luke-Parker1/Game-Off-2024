@@ -138,7 +138,7 @@ wait_time = 0.2
 [node name="DashCooldown" type="Timer" parent="."]
 
 [node name="TeleportCooldown" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 8.0
 
 [connection signal="animation_finished" from="FlashAnimation" to="." method="_on_flash_animation_animation_finished"]
 [connection signal="timeout" from="MindWipeCooldown" to="." method="_on_mind_wipe_cooldown_timeout"]

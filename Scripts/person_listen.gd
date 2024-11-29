@@ -8,7 +8,7 @@ func Enter():
 	if person:
 		person.velocity = Vector2(0, 0)
 
-func State_Update(delta: float):
+func State_Update(_delta: float):
 	if person:
 		talkers = person.talkers
 	

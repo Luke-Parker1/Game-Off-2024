@@ -32,6 +32,6 @@ func State_Update(delta: float):
 			Transitioned.emit(self, "Follow")
 		randomize_wander()
 
-func State_Physics_Update(delta: float):
+func State_Physics_Update(_delta: float):
 	if person:
 		person.velocity = move_direction * move_speed

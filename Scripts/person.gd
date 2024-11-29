@@ -17,12 +17,12 @@ var volume : int
 # True if this person is not supposed to find out the secret
 var cannot_know := false
 
-func _process(delta: float):
+func _process(_delta: float):
 	if aware:
 		$AwareBubble.visible = true
 		volume = aware_volume
 		if cannot_know:
-			print("He found out!")
+			get_parent().lost = true
 	else:
 		$AwareBubble.visible = false
 		volume = not_aware_volume
@@ -43,11 +43,11 @@ func _process(delta: float):
 		else:
 			$AnimatedSprite2D.play("can't_know_listen")
 
-func _physics_process(delta: float):
-	if $TalkArea/CollisionPolygon2D.disabled:
-		$TalkArea/CollisionPolygon2D.visible = false
-	else:
-		$TalkArea/CollisionPolygon2D.visible = true
+func _physics_process(_delta: float):
+	#if $TalkArea/CollisionPolygon2D.disabled:
+		#$TalkArea/CollisionPolygon2D.visible = false
+	#else:
+		#$TalkArea/CollisionPolygon2D.visible = true
 	if !$TalkArea.get_overlapping_bodies().is_empty():
 		for i in $TalkArea.get_overlapping_bodies():
 			if i not in listeners && get_tree().get_nodes_in_group("Person").has(i):
