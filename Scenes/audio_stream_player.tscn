@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://5culm4nqot3"]
+
+[ext_resource type="Script" path="res://Scripts/audio_stream_player.gd" id="1_4ia4p"]
+[ext_resource type="AudioStream" uid="uid://dejgin7lwch73" path="res://Art/Evasion.mp3" id="1_djab3"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_djab3")
+autoplay = true
+parameters/looping = true
+script = ExtResource("1_4ia4p")

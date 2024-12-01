@@ -14,9 +14,15 @@ var lost := false
 @export var person_scene : PackedScene
 
 func _ready():
+	# Play sound effects when paused
+	$WinSFX.process_mode = Node.PROCESS_MODE_ALWAYS
+	$LoseSFX.process_mode = Node.PROCESS_MODE_ALWAYS
+	
 	spawn_people()
 	
 	aware_num = floor(GlobalScore.score/2.0) + 1
+	if aware_num > 20:
+		aware_num = 20
 	
 	$CanvasLayer/MindEraseBar.max_value = $Player/MindWipeCooldown.wait_time
 	$CanvasLayer/DashBar.max_value = $Player/DashCooldown.wait_time
@@ -56,8 +62,10 @@ func _process(_delta):
 			i.find_child("AwareBubble").visible = false
 		GlobalScore.score += 1
 		$CanvasLayer/Score.text = "Score: " + str(GlobalScore.score)
+		$WinSFX.play()
 		$Options/Control.exit = true
 	if lost:
+		$LoseSFX.play()
 		$Options/Control.lost = true
 
 func spawn_people():

@@ -22,10 +22,13 @@ func _physics_process(_delta):
 		dash_direction = self.position.direction_to(get_global_mouse_position()).normalized()
 		dashing = true
 		$DashTimer.start()
+		$DashEffectTimer.start()
+		$DashSFX.play()
 	
 	if Input.is_action_just_pressed("right_click") && $TeleportCooldown.is_stopped():
 		self.global_position = get_global_mouse_position()
 		$TeleportCooldown.start()
+		$TeleportSFX.play()
 	
 	if dashing:
 		velocity = dash_direction * dash_speed
@@ -60,6 +63,7 @@ func _process(_delta):
 		$MindWipeCooldown.start()
 		$FlashAnimation.visible = true
 		$FlashAnimation.play("flash")
+		$MindWipeSFX.play()
 
 
 func _on_flash_animation_animation_finished():
@@ -73,6 +77,7 @@ func _on_mind_wipe_cooldown_timeout():
 func _on_dash_timer_timeout():
 	dashing = false
 	$DashTimer.stop()
+	$DashEffectTimer.stop()
 	$DashCooldown.start()
 
 
@@ -82,3 +87,20 @@ func _on_dash_cooldown_timeout():
 
 func _on_teleport_cooldown_timeout():
 	$TeleportCooldown.stop()
+
+func create_dash_effect():
+	var dash_silhouette = $AnimatedSprite2D.duplicate()
+	get_parent().add_child(dash_silhouette)
+	dash_silhouette.global_position = global_position
+	
+	var animation_time = $DashTimer.wait_time / 4
+	
+	await get_tree().create_timer(animation_time).timeout
+	dash_silhouette.modulate.a = 0.4
+	await get_tree().create_timer(animation_time).timeout
+	dash_silhouette.modulate.a = 0.2
+	dash_silhouette.queue_free()
+
+
+func _on_dash_effect_timer_timeout():
+	create_dash_effect()

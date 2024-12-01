@@ -1,8 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://cynv2uh7uk00b"]
+[gd_scene load_steps=21 format=3 uid="uid://cynv2uh7uk00b"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_e4cax"]
 [ext_resource type="Texture2D" uid="uid://b6hdlaaqd0wrl" path="res://Art/game_off_player-Sheet.png" id="3_cdbt1"]
 [ext_resource type="Texture2D" uid="uid://depvyilqpvpcy" path="res://Art/game_off_flash-Sheet.png" id="3_wcddx"]
+[ext_resource type="AudioStream" uid="uid://5gly5q3xj8qk" path="res://Art/game_off_wipe_sound.wav" id="4_7lqmu"]
+[ext_resource type="AudioStream" uid="uid://6ank4cnaf2cr" path="res://Art/game_off_dash_sound.wav" id="5_pxfsf"]
+[ext_resource type="AudioStream" uid="uid://d3a3gyfdf6de1" path="res://Art/game_off_teleport_sound.wav" id="6_ymuj1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vw8yc"]
 size = Vector2(40, 60)
@@ -140,8 +143,21 @@ wait_time = 0.2
 [node name="TeleportCooldown" type="Timer" parent="."]
 wait_time = 8.0
 
+[node name="DashEffectTimer" type="Timer" parent="."]
+wait_time = 0.067
+
+[node name="MindWipeSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_7lqmu")
+
+[node name="DashSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_pxfsf")
+
+[node name="TeleportSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ymuj1")
+
 [connection signal="animation_finished" from="FlashAnimation" to="." method="_on_flash_animation_animation_finished"]
 [connection signal="timeout" from="MindWipeCooldown" to="." method="_on_mind_wipe_cooldown_timeout"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]
 [connection signal="timeout" from="TeleportCooldown" to="." method="_on_teleport_cooldown_timeout"]
+[connection signal="timeout" from="DashEffectTimer" to="." method="_on_dash_effect_timer_timeout"]

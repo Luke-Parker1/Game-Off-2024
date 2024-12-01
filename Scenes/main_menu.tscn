@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5qlnest321o7"]
+[gd_scene load_steps=5 format=3 uid="uid://b5qlnest321o7"]
 
 [ext_resource type="FontFile" uid="uid://cd2btctqwtg0e" path="res://Art/ModernDOS9x16.ttf" id="1_5sqnl"]
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_l7plb"]
 [ext_resource type="Texture2D" uid="uid://brw4irnem1ass" path="res://Art/game_off_main_menu.png" id="2_4tq3w"]
+[ext_resource type="PackedScene" uid="uid://uye0qffjcnq2" path="res://Scenes/crt_shader.tscn" id="4_2onx0"]
 
 [node name="Main Menu" type="CanvasLayer"]
 script = ExtResource("1_l7plb")
@@ -62,11 +63,13 @@ theme_override_font_sizes/font_size = 64
 text = "How to Play"
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 1015.0
-offset_top = 691.0
-offset_right = 1268.0
-offset_bottom = 714.0
-text = "License: godotengine.org/license"
+offset_left = 10.0
+offset_top = 640.0
+offset_right = 405.0
+offset_bottom = 695.0
+theme_override_font_sizes/font_size = 18
+text = "License: godotengine.org/license
+Music by Matthew Pablo on opengameart.org"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -87,6 +90,8 @@ theme_override_font_sizes/font_size = 32
 text = "High Score: "
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CrtShader" parent="." instance=ExtResource("4_2onx0")]
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="HowToPlayButton" to="." method="_on_how_to_play_button_pressed"]

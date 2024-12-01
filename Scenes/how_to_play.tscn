@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cct2f6mejscl7"]
+[gd_scene load_steps=8 format=3 uid="uid://cct2f6mejscl7"]
 
 [ext_resource type="Script" path="res://Scripts/how_to_play.gd" id="1_oqlcl"]
 [ext_resource type="FontFile" uid="uid://cd2btctqwtg0e" path="res://Art/ModernDOS9x16.ttf" id="2_tt3fy"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://061ic5vchdn4" path="res://Art/game_off_person-Sheet.png" id="4_ie1ku"]
 [ext_resource type="Texture2D" uid="uid://imri34ga2f1" path="res://Art/game_off_bubble.png" id="5_5lmgw"]
 [ext_resource type="Texture2D" uid="uid://cqd8pvvofy7im" path="res://Art/game_off_cannot_know-Sheet.png" id="6_d5xnn"]
+[ext_resource type="PackedScene" uid="uid://uye0qffjcnq2" path="res://Scenes/crt_shader.tscn" id="7_adpo3"]
 
 [node name="HowToPlay" type="CanvasLayer"]
 script = ExtResource("1_oqlcl")
@@ -98,5 +99,7 @@ theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("2_tt3fy")
 theme_override_font_sizes/font_size = 32
 text = "Return to Menu"
+
+[node name="CrtShader" parent="." instance=ExtResource("7_adpo3")]
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -18,6 +18,7 @@ config/icon="res://Art/icon.svg"
 [autoload]
 
 GlobalScore="*res://Scripts/global_score.gd"
+AudioPlayer="*res://Scenes/audio_stream_player.tscn"
 
 [display]
 
