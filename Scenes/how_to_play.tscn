@@ -44,13 +44,13 @@ theme_override_fonts/font = ExtResource("2_tt3fy")
 theme_override_font_sizes/font_size = 32
 text = "Welcome to Erase the Secret! In this game, you play as a secret agent who must prevent a secret from getting out.
 
-Press W, A, S, and D to move. Press space to use the Mind-Wipe-3000 to make people forget the secret. Left click to dash in the direction of your mouse. Right click to teleport to where your mouse is. Be careful though, all of these abilities have to recharge!
+Press W, A, S, and D to move. Press space to use the Mind-Erase-3000 to make people forget the secret. Left click to dash in the direction of your mouse. Right click to teleport to where your mouse is. Be careful though, all of these abilities have to recharge!
 
 People with exclamation mark speech bubbles are aware of the secret! You have to erase all their memories to win! Be quick, because they will spread the secret to other people around them! As your score increases, more people will know the secret when the round starts.
 
 
 
-People with a white outline are able to destroy the orginization if the find out the secret! If they find out, you lose!"
+People with a white outline are able to destroy the organization if the find out the secret! If they find out, you lose!"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -85,9 +85,9 @@ region_rect = Rect2(0, 0, 16, 16)
 
 [node name="Button" type="Button" parent="."]
 texture_filter = 1
-offset_left = 4.0
+offset_left = 42.0
 offset_top = 677.0
-offset_right = 264.0
+offset_right = 302.0
 offset_bottom = 717.0
 theme_override_colors/font_hover_pressed_color = Color(0.945098, 0.054902, 0.0862745, 1)
 theme_override_colors/font_hover_color = Color(0.945098, 0.054902, 0.0862745, 1)
